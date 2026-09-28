@@ -80,33 +80,41 @@ int ajouter_Client(Clients *clients, Client *client)
     return 0;
 }
 
-
 /**
  * On supprime un client à la structure clients :
  *
- * 
+ *
  * @param *clients est un pointeur de la structure du Clients qui contient le tableau de client
  * @param *client est un pointeur de la structure du client, c'est le client à supprimer
  * @return 1 si le client a bien été supprimé au tableau, 0 sinon.
  */
-int supprimer_client(Clients *clients, Client *client){
+int supprimer_client(Clients *clients, Client *client)
+{
 
-    //on récupère l'indice du client a supprimer dans le tableau
-    int client_a_supprimer = cherche_client(clients, client);
+    // on récupère l'indice du client a supprimer dans le tableau
+    int index_supp = cherche_client(clients, client);
 
-    //on supprimer le client dans le tableau de la structure clients
-    clients->client + client_a_supprimer = 
+    if (index_supp != 0)
+    {
+
+        // on décale les éléments après le client d'intéret d'un case en moins de façon à supprimer la case du client à supprimer
+        for (int j = index_supp; j < clients->nombre_client - 1; j++)
+        {
+
+            clients->client + j = (clients->client) + j + 1;
+        }
+
+        clients->nombre_client--;
+
+        return 1;
+    }
+
+    //si le numéro n'a pas été trouvé
+    return 0;
+
 
 
 }
-
-
-
-
-
-
-
-
 
 int main()
 {
