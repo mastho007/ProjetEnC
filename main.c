@@ -26,6 +26,22 @@ typedef struct
 } Clients;
 
 
+
+void initialise_clients(Clients *clients, Client client[20], int nombre_client){
+
+
+    
+}
+
+
+
+
+
+
+
+
+
+
 /**
  * Recherche si dans le tableau de Client un client existe déja sur base de son numéro
  * Si le client n'existe pas encore -> on l'ajoute et on l'inscrémente au compteur.
