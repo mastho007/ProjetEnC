@@ -10,9 +10,9 @@
 void initialise_clients(Clients *clients, const Client *client, int nombre_client)
 {
 
-    if (clients != nullptr && client != nullptr)
+    if (clients != nullptr)
     {
-        //on vérif si le nombre de clients n'est pas soit inférieur à 0 et supérieur à 20
+        // on vérif si le nombre de clients n'est pas soit inférieur à 0 et supérieur à 20
         if (nombre_client > 20)
         {
             nombre_client = 20;
@@ -23,14 +23,21 @@ void initialise_clients(Clients *clients, const Client *client, int nombre_clien
             nombre_client = 0;
         }
 
-        // on insère les différents clients dans le tableau de la structure clients
-        for (int i = 0; i < nombre_client; i++)
+        //si le tableau des client est null -> on ne passe pas dans la boucle et on assigne le nbre de client a zero.
+        if (client != nullptr)
         {
-            // il faut aussi que je vérif si un client est null?
-            clients->client[i] = client[i];
-        }
+            // on insère les différents clients dans le tableau de la structure clients
+            for (int i = 0; i < nombre_client; i++)
+            {
+                // il faut aussi que je vérif si un client est null?
+                clients->client[i] = client[i];
+            }
+            clients->nombre_client = nombre_client;
+        }else
+        {
+            clients->nombre_client = 0;
 
-        clients->nombre_client = nombre_client;
+        }
     }
 }
 

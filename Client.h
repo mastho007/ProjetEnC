@@ -1,10 +1,10 @@
 // création d'une enum pour les différents type de fréquentation d'un client (très régulier, régulier, occasionel)
 typedef enum
 {
-    TRES_REGULIER,
-    REGULIER,
-    OCCASIONEL,
-    INCONNU
+    TRES_REGULIER = 1,
+    REGULIER = 2,
+    OCCASIONEL = 3,
+    INCONNU = 4
 } Frequentation;
 
 /**
@@ -29,6 +29,8 @@ typedef struct
  *
  */
 void init_client(Client *nouv_client, int numero, const char *nom, const char *prenom, const char *adresse, Frequentation statut);
+
+
 /**
  * Renvoi le numéro du client et le pointeur ne doit pas être null
  *
