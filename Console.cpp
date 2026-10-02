@@ -16,6 +16,7 @@ int afficher_menu(int choix)
     printf("Veillez choissir une opération : \n");
     printf("1.Afficher tout les clients \n2. Ajouter un client\n3. Supprimer un client\n4. Rechercher un client\n5. Quitter");
     scanf("%d", &choix);
+    fflush(stdin);
     return choix;
 }
 
