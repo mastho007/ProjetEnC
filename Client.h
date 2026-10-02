@@ -1,3 +1,5 @@
+#pragma once
+
 // création d'une enum pour les différents type de fréquentation d'un client (très régulier, régulier, occasionel)
 typedef enum
 {

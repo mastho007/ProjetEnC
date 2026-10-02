@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 /**
- * Affiche le menu principale du main 
- * 1.Afficher tout les clients 
+ * Affiche le menu principale du main
+ * 1.Afficher tout les clients
  * 2. Ajouter un client
  * 3. Supprimer un client
  * 4. Rechercher un client
@@ -13,7 +13,7 @@
  */
 int afficher_menu(int choix)
 {
-    printf("Veillez choissir une opération : \n");
+    printf("Veillez choisir une operation : \n");
     printf("1.Afficher tout les clients \n2. Ajouter un client\n3. Supprimer un client\n4. Rechercher un client\n5. Quitter");
     scanf("%d", &choix);
     fflush(stdin);
@@ -25,11 +25,39 @@ int afficher_menu(int choix)
  * @param resultat de l'opération soit 1 ou 0.
  * @param *opération est le pointeur de tableau de char qui contient le type d'opération utilisée.
  */
-void afficherNotification(int resultat, const char *operation){
+void afficherNotification(int resultat, const char *operation)
+{
 
     (resultat == 1) ? printf("L'opération %s s'est déroulé avec succès.", operation) : printf("L'opération %s a échouée.", operation);
 }
 
+void afficher_fin_de_partie()
+{
+
+    printf("Fin de partie.");
+}
+
+void afficher_mauvais_choix()
+{
+
+    printf("Vous devez choisir un nombre entre 1 et 5 inclus, Veuillez réessayez.");
+}
+
+/**
+ * Sur base du tableau transmis via pointeur on vient récupérer le numéro du client que l'utilisateur a choisiµ
+ * @return renvoi un entier qui est le numéro du client
+ */
+int inserer_numero_client()
+{
+
+    int numero_client;
+
+    printf("Insérer un numéro client : ");
+    scanf("%d", &numero_client);
+    fflush(stdin);
+
+    return numero_client;
+}
 
 /**
  * Sur base d'un pointeur qui pointe vers un client, on récupère ses données et on affiche celle ci.
@@ -44,6 +72,11 @@ void afficher_client(const Client *client)
         printf("%7s|\t%20s|\t%20s|\t%20s|\t%20s\n", "numero", "nom", "prenom", "adresse", "Frequentation");
 
         printf("%7d|\t%20s|\t%20s|\t%20s|\t%20s\n", getNumero(client), getNom(client), getPrenom(client), getAdresse(client), getFrequentation(client));
+    }
+    else
+    {
+
+        afficherNotification(0, "Afficher client");
     }
 }
 

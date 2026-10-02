@@ -1,6 +1,8 @@
 #include "Client.h"
 #include <string.h>
 
+
+
 /**
  * Sur base du pointeur Client contenant les infos on charge ces infos dans l'objet
  * @param *nouv_client est le pointeur vers la structure client par laquelle on souhaite initialiser l'objet
@@ -14,12 +16,12 @@ void init_client(Client *nouv_client, int numero, const char *nom, const char *p
     {
 
         nouv_client->numero = numero;
-        //on s'assure que les tableau nom, adresse, prenom occupent bien la taille de la structure
+        // on s'assure que les tableau nom, adresse, prenom occupent bien la taille de la structure
         strncpy(nouv_client->nom, nom, sizeof(nouv_client->nom) - 1);
         strncpy(nouv_client->prenom, prenom, sizeof(nouv_client->prenom) - 1);
         strncpy(nouv_client->adresse, adresse, sizeof(nouv_client->adresse) - 1);
 
-        //on s'assure que la dernière case soit bien '\0'
+        // on s'assure que la dernière case soit bien '\0'
         nouv_client->nom[sizeof(nouv_client->nom) - 1] = '\0';
         nouv_client->prenom[sizeof(nouv_client->prenom) - 1] = '\0';
         nouv_client->adresse[sizeof(nouv_client->adresse) - 1] = '\0';

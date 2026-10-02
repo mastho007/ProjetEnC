@@ -1,4 +1,4 @@
-#include "Client.h"
+#pragma once
 #include "Clients.h"
 
 /**
@@ -19,6 +19,18 @@ int afficher_menu(int choix);
  * @param *opération est le pointeur de tableau de char qui contient le type d'opération utilisée.
  */
 void afficherNotification(int resultat, const char *operation);
+
+/**
+ * Sur base du tableau transmis via pointeur on vient récupérer le numéro du client que l'utilisateur a choisiµ
+ * @return renvoi un entier qui est le numéro du client
+ */
+int inserer_numero_client();
+
+
+void afficher_fin_de_partie();
+
+void afficher_mauvais_choix();
+
 
 
 /**
