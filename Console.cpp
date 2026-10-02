@@ -2,6 +2,35 @@
 #include <stdio.h>
 
 /**
+ * Affiche le menu principale du main 
+ * 1.Afficher tout les clients 
+ * 2. Ajouter un client
+ * 3. Supprimer un client
+ * 4. Rechercher un client
+ * 5. Quitter
+ * @param choix est le numéro qui réprésente l'opération choisie par l'utilisateur.
+ * @return un entier qui contient le choix de l'utilisateur
+ */
+int afficher_menu(int choix)
+{
+    printf("Veillez choissir une opération : \n");
+    printf("1.Afficher tout les clients \n2. Ajouter un client\n3. Supprimer un client\n4. Rechercher un client\n5. Quitter");
+    scanf("%d", &choix);
+    return choix;
+}
+
+/**
+ * Affiche un message de succès si le résultat est 1, si c'est 0 alors message d'erreur.
+ * @param resultat de l'opération soit 1 ou 0.
+ * @param *opération est le pointeur de tableau de char qui contient le type d'opération utilisée.
+ */
+void afficherNotification(int resultat, const char *operation){
+
+    (resultat == 1) ? printf("L'opération %s s'est déroulé avec succès.", operation) : printf("L'opération %s a échouée.", operation);
+}
+
+
+/**
  * Sur base d'un pointeur qui pointe vers un client, on récupère ses données et on affiche celle ci.
  * @param *Client le pointeur qui pointe vers la structure Client qui contient les infos.
  */
@@ -67,11 +96,9 @@ void saisir_Client(Client *client)
         printf("insérer un adresse de client : ");
         fgets(adresse, sizeof(adresse), stdin);
 
-
         printf("1. %s\n2. %s\n3. %s\n", "TRES_REGULIER", "REGULIER", "OCCASIONEL");
         printf("choisir un statut de fréquentation : ");
         scanf("%d", &choix);
-
 
         switch (choix)
         {

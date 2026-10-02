@@ -1,6 +1,25 @@
 #include "Client.h"
 #include "Clients.h"
 
+/**
+ * Affiche le menu principale du main
+ * 1.Afficher tout les clients
+ * 2. Ajouter un client
+ * 3. Supprimer un client
+ * 4. Rechercher un client
+ * 5. Quitter
+ * @param choix est le numéro qui réprésente l'opération choisie par l'utilisateur.
+ * @return un entier qui contient le choix de l'utilisateur
+ */
+int afficher_menu(int choix);
+
+/**
+ * Affiche un message de succès si le résultat est 1, si c'est 0 alors message d'erreur.
+ * @param resultat de l'opération soit 1 ou 0.
+ * @param *opération est le pointeur de tableau de char qui contient le type d'opération utilisée.
+ */
+void afficherNotification(int resultat, const char *operation);
+
 
 /**
  * Sur base d'un pointeur qui pointe vers un client, on récupère ses données et on affiche celle ci.
