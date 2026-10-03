@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CLIENTS_H
+#define CLIENTS_H
 #include "Client.h"
 
 /**
@@ -62,3 +63,6 @@ int ajouter_Client(Clients *clients, const Client *client);
  * @return 1 si le client a bien été supprimé au tableau, -1 sinon.
  */
 int supprimer_client(Clients *clients, const Client *client);
+
+
+#endif

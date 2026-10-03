@@ -43,6 +43,13 @@ void afficher_mauvais_choix()
     printf("Vous devez choisir un nombre entre 1 et 5 inclus, Veuillez réessayez.");
 }
 
+
+
+
+
+
+
+
 /**
  * Sur base du tableau transmis via pointeur on vient récupérer le numéro du client que l'utilisateur a choisiµ
  * @return renvoi un entier qui est le numéro du client

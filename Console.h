@@ -1,4 +1,6 @@
-#pragma once
+#ifndef CONSOLE_H
+#define CONSOLE_H
+
 #include "Clients.h"
 
 /**
@@ -51,3 +53,6 @@ void afficher_liste_clients(const Clients *clients);
  * @param *client un pointeur client qui sera utiliser pour stocker les info de la saisie Client
  */
 void saisir_Client(Client *client);
+
+
+#endif

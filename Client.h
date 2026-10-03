@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CLIENT_H
+#define CLIENT_H
 
 // création d'une enum pour les différents type de fréquentation d'un client (très régulier, régulier, occasionel)
 typedef enum
@@ -69,3 +70,6 @@ const char *getAdresse(const Client *client);
  * @return une constante Frequentation qui est le statut du client, renvoie INCONNU si le client est un ptr null.
  */
 Frequentation getFrequentation(const Client *client);
+
+
+#endif
